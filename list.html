@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepy Winterfest 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --background: #f5f6fa;
+            --snow: #fff;
+            --text: #34495e;
+
+            /* Event type colors */
+            --event-social: #FF9999;
+            --event-gaming: #99FF99;
+            --event-creative: #9999FF;
+            --event-competition: #FFCC99;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Comic Neue", serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2980b9, #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .week-group {
+            background: var(--snow);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #8B7355, #6B4423);
+            color: #FFF5E6;
+            padding: 1rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-item {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #eef2f7;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-item:last-child {
+            border-bottom: none;
+        }
+
+        .event-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .event-date {
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .event-type-social { background-color: var(--event-social); }
+        .event-type-gaming { background-color: var(--event-gaming); }
+        .event-type-creative { background-color: var(--event-creative); }
+        .event-type-competition { background-color: var(--event-competition); }
+
+        .event-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-right: 2rem;
+        }
+
+        .activity-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .activity-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .activity-list li::before {
+            content: "❄️";
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .legend {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #3c5a78, #4b86b4);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .join-button {
+            background: #ffd5d5;
+            color: #634c4c;
+            border: 3px solid #ffb6b6;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 182, 182, 0.3);
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>❄️ Sleepy Winterfest 2025 ❄️</h1>
+        <p>Join us for a month of winter-themed gaming and community events! 🎮 ✨</p>
+    </div>
+
+    <div class="container">
+        <div class="legend">
+            <div class="legend-item">
+                <div class="event-indicator event-type-social"></div>
+                <span>Social Events</span>
+            </div>
+            <div class="legend-item">
+                <div class="event-indicator event-type-gaming"></div>
+                <span>Gaming Events</span>
+            </div>
+            <div class="legend-item">
+                <div class="event-indicator event-type-creative"></div>
+                <span>Creative Events</span>
+            </div>
+            <div class="legend-item">
+                <div class="event-indicator event-type-competition"></div>
+                <span>Competitions</span>
+            </div>
+        </div>
+
+        <div id="eventList"></div>
+    </div>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Join Our Community</h2>
+        <p>Follow us on Discord for the latest updates and event announcements!</p>
+        <button onclick="window.location.href='http://discord.gg/sleepymeadows'" class="join-button">Join Discord Server</button>
+    </div>
+
+    <script>
+        // Event data with categories
+        const events = {
+            '2025-01-03': {
+                title: '❄️  Winterfest Kickoff',
+                description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
+                category: 'social',
+                activities: [
+                    '👶 Baby Photos - Share your cutest winter baby pics!',
+                    '🎬 Winter Movie Clips - Bring clips from your favorite winter films',
+                    '🎵 Cozy Playlist - Share your ultimate winter comfort music'
+                ]
+            },
+            '2025-01-04': {
+                title: '⛄ Winter Themed Minecraft SMP',
+                description: 'Join our seasonal Minecraft server with winter-themed builds and activities! 🏰 ❄️',
+                category: 'gaming'
+            },
+            '2025-01-05': {
+                title: '🎲 Game Night',
+                description: 'Community game night featuring winter-themed party games! 🎮 🎪',
+                category: 'gaming'
+            },
+            '2025-01-08': {
+                title: '🎨 Custom Skin Competition',
+                description: 'Show off your winter-themed character skins! 👗 ✨',
+                category: 'competition'
+            },
+            '2025-01-10': {
+                title: '🔥 Fireside Chill & Chat',
+                description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
+                category: 'social',
+                activities: [
+                    '🧤 Winter Fashion - Show off your coziest winter outfits',
+                    '😄 Winter Memes - Share your favorite winter-themed memes',
+                    '☕ Winter Drinks - Exchange your favorite winter drink recipes'
+                ]
+            },
+            '2025-01-11': {
+                title: '⛄ Winter Themed Minecraft SMP',
+                description: 'Continue the winter adventure in our seasonal Minecraft server! 🏰 ❄️',
+                category: 'gaming'
+            },
+            '2025-01-12': {
+                title: '🍿 Movie Night',
+                description: 'Cozy up for a community movie night featuring winter classics! 🎬 🛋️',
+                category: 'social'
+            },
+            '2025-01-15': {
+                title: '📸 Winter Photography Contest',
+                description: 'Share your best winter-themed photos! 🌨️ 📱',
+                category: 'competition'
+            },
+            '2025-01-17': {
+                title: '🔥 Fireside Chill & Chat',
+                description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
+                category: 'social',
+                activities: [
+                    '⛷️ Winter Hobbies - What do you love doing in winter?',
+                    '💭 Winter Memories - Share your favorite winter stories',
+                    '🎨 Winter Art - Show off your winter-themed creations'
+                ]
+            },
+            '2025-01-18': {
+                title: '🎯 Game Show Night',
+                description: 'Participate in our winter-themed game show with prizes! 🏆 ✨',
+                category: 'gaming'
+            },
+            '2025-01-24': {
+                title: '🔥 Fireside Chill & Chat',
+                description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
+                category: 'social',
+                activities: [
+                    '🎄 DIY Decor - Share your winter decoration ideas',
+                    '📚 Book Corner - Recommend your favorite winter reads',
+                    '❓ Winter Quiz - Test your winter knowledge!'
+                ]
+            },
+            '2025-01-25': {
+                title: '🏅 Sleepy Olympics',
+                description: 'Compete in our winter-themed community games! 🎿 ⛸️',
+                category: 'competition'
+            },
+            '2025-01-26': {
+                title: '👩‍🍳 Cooking Challenge',
+                description: 'Share and create winter-themed recipes with the community! 🍲 🧁',
+                category: 'creative'
+            },
+            '2025-01-31': {
+                title: '🔥 Fireside Chill & Chat',
+                description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
+                category: 'social',
+                activities: [
+                    '🎵 Music Night - Share winter-themed songs and playlists',
+                    '📸 Photo Share - Show off your winter photography',
+                    '🎮 Gaming Stories - Share your favorite winter gaming memories'
+                ]
+            }
+        };
+
+        // Helper function to get week number
+        function getWeekNumber(date) {
+            const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            return Math.ceil((date.getDate() + firstDay.getDay()) / 7);
+        }
+
+        // Get category style
+        function getCategoryStyle(category) {
+            return `event-type-${category}`;
+        }
+
+        function showModal(date) {
+            const event = events[date];
+            const modal = document.getElementById('eventModal');
+            const modalContent = document.getElementById('modalContent');
+
+            modalContent.innerHTML = `
+                <h3 class="modal-title">${event.title}</h3>
+                <p>${event.description}</p>
+                ${event.activities ? `
+                    <ul class="activity-list">
+                        ${event.activities.map(activity => `<li>${activity}</li>`).join('')}
+                    </ul>
+                ` : ''}
+            `;
+
+            modal.classList.add('visible');
+        }
+
+        function closeModal() {
+            document.getElementById('eventModal').classList.remove('visible');
+        }
+
+        // Generate event list grouped by weeks
+        function generateEventList() {
+            const eventList = document.getElementById('eventList');
+            const sortedDates = Object.keys(events).sort();
+
+            let currentWeek = 0;
+            let currentWeekElement = null;
+
+            sortedDates.forEach(date => {
+                const event = events[date];
+                const eventDate = new Date(date);
+                const weekNumber = getWeekNumber(eventDate);
+
+                if (weekNumber !== currentWeek) {
+                    currentWeek = weekNumber;
+
+                    const weekGroup = document.createElement('div');
+                    weekGroup.className = 'week-group';
+
+                    const weekHeader = document.createElement('div');
+                    weekHeader.className = 'week-header';
+                    weekHeader.textContent = `Week ${weekNumber}`;
+                    weekGroup.appendChild(weekHeader);
+
+                    eventList.appendChild(weekGroup);
+                    currentWeekElement = weekGroup;
+                }
+
+                const eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                eventItem.onclick = () => showModal(date);
+
+                const dayOfMonth = eventDate.getDate();
+
+                eventItem.innerHTML = `
+                    <div class="event-date">${dayOfMonth}</div>
+                    <div class="event-indicator ${getCategoryStyle(event.category)}"></div>
+                    <div class="event-title">${event.title}</div>
+                `;
+
+                currentWeekElement.appendChild(eventItem);
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', generateEventList);
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('eventModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
