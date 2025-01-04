@@ -134,12 +134,12 @@
       color: #4a3728;
     }
     .calendar-day.has-event {
-      background-color: #e6d5ca;
+      background-color: #ECDEC9;
       border-color: #b49b8a;
       color: #4a3728;
     }
     .calendar-day.has-event:hover {
-      background-color: #c4a691;
+      background-color: #F9FEFF;
       border-color: #96806f;
     }
     .day-number {
@@ -491,100 +491,132 @@
      *      COMBINED EVENT DATA
      ****************************************/
     const events = {
-      '2025-01-03': {
-        title: '❄️ Winterfest Kickoff',
-        description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
-        category: 'social',
-        activities: [
-          '👶 Baby Photos - Share your cutest winter baby pics!',
-          '🎬 Winter Movie Clips - Bring clips from your favorite winter films',
-          '🎵 Cozy Playlist - Share your ultimate winter comfort music'
+      "2025-01-03": {
+        "title": "❄️✨ Winterfest Kickoff",
+        "startTime": "8pm EST",
+        "description": "⛄ Sleepy’s first official Fireside Chill & Chat!! Tonight will be all about having a good time as a server! ✨ Tonight bring your merry selves and some winter movie clips, and if you’re really feeling the winter spirit please come with a cozy playlist flickering with good vibes. ❄️",
+        "category": "social",
+        "activities": [
+          "🎬 Movie Clips: Bring some fun movie clips from your favourite holiday/winter films! 🍿",
+          "🎵 Cozy Playlist: Share your coziest winter tracks! ❄️"
         ]
       },
-      '2025-01-04': {
-        title: '⛄ Winter Themed Minecraft SMP',
-        description: 'Join our seasonal Minecraft server with winter-themed builds and activities! 🏰 ❄️',
-        category: 'gaming'
+      "2025-01-04": {
+        "title": "⛄ Wintercraft Minecraft SMP ⛄",
+        "startTime": "10am EST",
+        "description": "❄️ Take a sleigh ride into a snowy wonderland in the Wintercraft SMP, an elevated vanilla experience with a whole new level of chill. Don’t forget your coats and hats or you might just lose some diamonds in this frigid weather! P.S. we don’t accept members with icy stares >:C ⛄",
+        "category": "gaming"
       },
-      '2025-01-05': {
-        title: '🎲 Game Night',
-        description: 'Community game night featuring winter-themed party games! 🎮 🎪',
-        category: 'gaming'
+      "2025-01-05": {
+        "title": "❄️ Game Night",
+        "startTime": "6pm EST",
+        "description": "⛄ Community game night with an extravaganza of fun winter-themed games ⛄",
+        "category": "gaming"
       },
-      '2025-01-08': {
-        title: '🎨 Custom Skin Competition',
-        description: 'Show off your winter-themed character skins! 👗 ✨',
-        category: 'competition'
+      "2025-01-08": {
+        "title": "🎨❄️ Custom Skin Competition",
+        "startTime": "6pm EST",
+        "description": "✨ Join Sleepy members in a fun night on ____ to show off your winter themed game cosmetics and later join us on roblox for some dress up fun!! ✨",
+        "category": "competition"
       },
-      '2025-01-10': {
-        title: '🔥 Fireside Chill & Chat',
-        description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
-        category: 'social',
-        activities: [
-          '🧤 Winter Fashion - Show off your coziest winter outfits',
-          '😄 Winter Memes - Share your favorite winter-themed memes',
-          '☕ Winter Drinks - Exchange your favorite winter drink recipes'
+      "2025-01-10": {
+        "title": "🔥 Fireside Chill & Chat",
+        "startTime": "7pm EST",
+        "description": "✨ Tonight’s Fireside Chill & Chat is full of fun–just like we hope your hot cocoa cups are! Join us in bringing your favourite seasonal drinks and recipes to call as well as a fun “fit-check” moment in one of your favourite winter ensembles! We are also hoping you can bring us some laughs with your favourite snowy season memes:) ❄️",
+        "category": "social",
+        "activities": [
+          "🧣 Cozy Fashion Check: If you’re feeling comfortable with it feel free to join us and share your coziest winter ensembles ❄️",
+          "☕ Seasonal Drinks: Bring your tastiest holiday drinks–warm or cold– to call tonight as well as the recipes for a fun sharing opportunity ✨",
+          "🤣 Winter memes: Hunt down your silliest winter memes for some good laughs 🥶"
         ]
       },
-      '2025-01-11': {
-        title: '⛄ Winter Themed Minecraft SMP',
-        description: 'Continue the winter adventure in our seasonal Minecraft server! 🏰 ❄️',
-        category: 'gaming'
+      "2025-01-11": {
+        "title": "⛄ Wintercraft Minecraft SMP Dragon Showdown 🐉",
+        "startTime": "6pm EST",
+        "description": "⚔️ Join the Sleepy warriors in a tiresome battle against the intrepid Ice Dragon (ender dragon) to save the server and open up new dimensions! ❄️",
+        "category": "gaming"
       },
-      '2025-01-12': {
-        title: '🍿 Movie Night',
-        description: 'Cozy up for a community movie night featuring winter classics! 🎬 🛋️',
-        category: 'social'
+      "2025-01-12": {
+        "title": "🍿 Frosty Film Night",
+        "startTime": "5pm EST",
+        "description": "❄️ Sleepy will be having a frosty film night featuring holiday classics, make sure to bring your yummiest snacks! 🍬",
+        "category": "social"
       },
-      '2025-01-15': {
-        title: '📸 Winter Photography Contest',
-        description: 'Share your best winter-themed photos! 🌨️ 📱',
-        category: 'competition'
+      "2025-01-15": {
+        "title": "📸 Piercing Photography Competition",
+        "startTime": "6pm EST",
+        "description": "❄️ Take some time to hunt and photograph the coziest and frostiest winter scenery you can, both irl and in-game haha! Feel free to bring multiple photos and we will have a small voting contest where we will find the iciest photographer in Sleepy! 🌨️",
+        "category": "competition"
       },
-      '2025-01-17': {
-        title: '🔥 Fireside Chill & Chat',
-        description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
-        category: 'social',
-        activities: [
-          '⛷️ Winter Hobbies - What do you love doing in winter?',
-          '💭 Winter Memories - Share your favorite winter stories',
-          '🎨 Winter Art - Show off your winter-themed creations'
+      "2025-01-17": {
+        "title": "🔥 Fireside Chill & Chat",
+        "startTime": "7pm EST",
+        "description": "⛄ Step into the snowy spirit and share your favourite activities and hobbies during the winter season, and don’t forget to bring the unforgettable memories during this time of year you’ve been dying to share! We will also have a special display of your most creative and gorgeous holiday artwork! ❄️",
+        "category": "social",
+        "activities": [
+          "🌨️ Winter Hobbies: Take some time and think about what you love doing during this time of year! ⛄",
+          "💭 Seasonal Memories: In addition to your favourite winter hobbies bring us some fun memories to share–maybe even doing those hobbies! ☃️",
+          "🎨 Holiday Art: Bring some festive artwork to share with Sleepy–we don’t judge talent here! ❄️"
         ]
       },
-      '2025-01-18': {
-        title: '🎯 Game Show Night',
-        description: 'Participate in our winter-themed game show with prizes! 🏆 ✨',
-        category: 'gaming'
+      "2025-01-18": {
+        "title": "🎯 Sleepy Snowball Fight!",
+        "startTime": "5pm EST",
+        "description": "🥶 Snowballs will be flying (or maybe just quippy comments) as Sleepy steps into a night of game shows and fun competition to see who is the ultimate napper! 🏆",
+        "category": "gaming"
       },
-      '2025-01-24': {
-        title: '🔥 Fireside Chill & Chat',
-        description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
-        category: 'social',
-        activities: [
-          '🎄 DIY Decor - Share your winter decoration ideas',
-          '📚 Book Corner - Recommend your favorite winter reads',
-          '❓ Winter Quiz - Test your winter knowledge!'
+      "2025-01-19": {
+        "title": "🐻 Polar Party Animals 🐧",
+        "startTime": "6pm EST",
+        "description": "Brrrr, tonight will be full of surprises and fun as we play some party animals! ❄️",
+        "category": "gaming"
+      },
+      "2025-01-24": {
+        "title": "🔥 Fireside Chill & Chat",
+        "startTime": "7pm EST",
+        "description": "❄️ Sleepy will be needing a big fire tonight with these below freezing books and arctic decor! Come prepared to show us your favourite winter reads and help us decorate around the fire with your cutest decorations! There will also be a little test of knowledge with our cozy quizzes, be ready to face off against your fellow Sleepy members!! ⛄",
+        "category": "social",
+        "activities": [
+          "🎄 Arctic Decor: Bring your homemade decor or photos of your favourite decorations to share with Sleepy!",
+          "📚 Below Freezing Books: Grab those winter stories and maybe read a bit of them to our dozy bunch! ❄️",
+          "❓ Glacial Quiz: Test your knowledge of the season in our chilling Glacial Quiz! 🥶"
         ]
       },
-      '2025-01-25': {
-        title: '🏅 Sleepy Olympics',
-        description: 'Compete in our winter-themed community games! 🎿 ⛸️',
-        category: 'competition'
+      "2025-01-25": {
+        "title": "🏅 Snowy Sleepy Olympics",
+        "startTime": "5pm EST",
+        "description": "☃️ If you’re brave enough and want to test your strength then join us tonight in our Snowy Sleepy Olympics!! We will have a night full of frosty competitions and wintry games, show up with your naps taken and your fingers warmed up for gaming! ❄️",
+        "category": "competition"
       },
-      '2025-01-26': {
-        title: '👩‍🍳 Cooking Challenge',
-        description: 'Share and create winter-themed recipes with the community! 🍲 🧁',
-        category: 'creative'
+      "2025-01-26": {
+        "title": "👩‍🍳 Cozy Cooking Challenge",
+        "startTime": "6pm EST",
+        "description": "🍪 Home-make some tasty treats and bring them tonight for a fun “show and tell” experience with our cozy kin. ❄️",
+        "category": "creative"
       },
-      '2025-01-31': {
-        title: '🔥 Fireside Chill & Chat',
-        description: 'Relaxed community gathering with winter activities and sharing! 🧣 ☕',
-        category: 'social',
-        activities: [
-          '🎵 Music Night - Share winter-themed songs and playlists',
-          '📸 Photo Share - Show off your winter photography',
-          '🎮 Gaming Stories - Share your favorite winter gaming memories'
+      "2025-01-29": {
+        "title": "❄️ Snowflake Shorts",
+        "startTime": "6pm EST",
+        "description": "☃️ Get creative and make a snowy-short for our Sleepy watch party on “Snowflake Shorts” night! Take some clips of us playing games and/or some pretty clips of snowy scenery and share it with us edited into a comfy short for us to snuggle up and enjoy with some warm cocoa! ✨",
+        "category": "creative"
+      },
+      "2025-01-31": {
+        "title": "🔥 Fireside Chill & Chat",
+        "startTime": "7pm EST",
+        "description": "❄️ In our final ‘Fireside Chill & Chat’ bring some more songs, photos and stories you haven’t yet had a chance to bring! We need some help sending this icy month off with a snowfall of fun! ⛄",
+        "category": "social",
+        "activities": [
+          "🎶 Snuggly songs",
+          "📸 Comfy screenshots/photos",
+          "🎮 Wintry gaming stories",
+          "👶 Baby Photos - Share your cutest winter baby pics!"
         ]
+      },
+      "2025-02-01": {
+        "title": "✨ Sleepy Winterfest Closeoff",
+        "startTime": "6pm EST",
+        "description": "tbd",
+        "category": "social"
       }
     };
 
@@ -743,7 +775,7 @@
 
         // Build the item
         eventItem.innerHTML = `
-          <div class="event-date">${eventDate.getDate()}</div>
+          <div class="event-date">${eventDate.getDate() + 1}</div>
           <div class="event-indicator ${getCategoryStyle(event.category)}"></div>
           <div class="event-title">${event.title}</div>
         `;
